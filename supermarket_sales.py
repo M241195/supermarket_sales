@@ -46,11 +46,11 @@ with left_col:
     st.subheader('Total Sales')
     st.subheader(f'US $ {total_sales:.2f}')
 with middle_col:
-    st.subheader('gross income')
+    st.subheader('Gross Income')
     st.subheader(f'US $ {total_profit:.2f}')
 with right_col:
-    st.markdown(f'<h3 style="text-align: center;">{'Product Sector'}</h3>', unsafe_allow_html=True)
-    st.markdown(f'<h3 style="text-align: center;">{product_num}</h3>', unsafe_allow_html=True)
+    st.subheader('Product Sector')
+    st.subheader(f'{product_num}')
 df_select = df.query("City==@city and `Product line`==@product_sector and Gender==@gender and `Customer type`==@customer_type and Payment==@payment")
 sales_by_product = df_select.groupby('Product line')['Total'].sum().sort_values(ascending=False)
 
